@@ -1,6 +1,6 @@
 #EXTRA CREDIT
 
-64. Minimum Path Sum
+#64. Minimum Path Sum
 class Solution:
     def minPathSum(self, grid):
         """
@@ -27,5 +27,24 @@ class Solution:
                        
         return tc[rlenght-1][clength-1]
         
-        
+#120. Triangle        
+    def minimumTotal(self, triangle):
+        """
+        :type triangle: List[List[int]]
+        :rtype: int
+        Details 
+        Runtime: 84 ms, faster than 7.54% of Python3 online submissions for Triangle.
+        """
+        tlen = len(triangle)
+        for i in range(1, tlen):
+            for j in range(0, i+1):
+                #
+                if j ==0:
+                    triangle[i][j] += triangle[i-1][j]
+                elif j == i:
+                    triangle[i][j] += triangle[i-1][j-1]
+                else:
+                    triangle[i][j] = triangle[i][j]+min(triangle[i-1][j-1], triangle[i-1][j])
+                    
+        return min(triangle[tlen-1])
         
