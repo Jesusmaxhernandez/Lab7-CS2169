@@ -27,7 +27,7 @@ class Solution:
                        
         return tc[rlenght-1][clength-1]
         
-#120. Triangle        
+    #120. Triangle        
     def minimumTotal(self, triangle):
         """
         :type triangle: List[List[int]]
